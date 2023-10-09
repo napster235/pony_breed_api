@@ -1,6 +1,7 @@
-Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+# frozen_string_literal: true
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+Rails.application.routes.draw do
+  get 'api/v1/random_pony' => 'api/v1/pony_breeds#random_pony', as: :random_pony
+  get 'api/v1/pony_by_name' => 'api/v1/pony_breeds#pony_by_name', as: :pony_by_name
+  get 'api/v1/pony_by_key' => 'api/v1/pony_breeds#pony_by_key', as: :pony_by_key
 end

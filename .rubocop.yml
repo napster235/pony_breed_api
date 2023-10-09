@@ -1,0 +1,42 @@
+  AllCops:
+    TargetRubyVersion: 3.0
+    SuggestExtensions: false
+    NewCops: disable
+
+  # ------------------------------------------------------- Layout -------------------------------------------------------
+
+  Layout/EmptyLinesAroundBlockBody:
+    Enabled: false
+
+  Layout/EmptyLinesAroundClassBody:
+    Enabled: false
+
+  Layout/EmptyLinesAroundModuleBody:
+    Enabled: false
+
+  Layout/MultilineAssignmentLayout:
+    Enabled: false
+
+  Layout/LineLength:
+    Max: 120
+
+  # ------------------------------------------------------- Style --------------------------------------------------------
+
+  Style/ClassAndModuleChildren:
+    Enabled: false
+  Style/StringLiteralsInInterpolation:
+    Enabled: true
+    EnforcedStyle: double_quotes
+  Style/Documentation:
+    Enabled: false
+
+  # ------------------------------------------------------- Metrics ------------------------------------------------------
+
+  Metrics/BlockLength:
+    Enabled: false
+  Metrics/CyclomaticComplexity:
+    Enabled: false
+  Metrics/PerceivedComplexity:
+    Enabled: false
+  Metrics/MethodLength:
+    Enabled: false
