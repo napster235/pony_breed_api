@@ -44,6 +44,7 @@ RSpec.describe 'pony_breeds', type: :request do
   describe '#pony_by_name' do
     context 'when retrieving a pony by an existing name' do
       subject { get pony_by_name_path, params: { name: 'Bali pony' } }
+      # rubocop:disable Layout/LineLength
       let(:bali_pony) do
         {
           'name' => 'Bali Pony',
@@ -51,6 +52,7 @@ RSpec.describe 'pony_breeds', type: :request do
           'wiki_url' => 'https://en.wikipedia.org/wiki/Bali Pony'
         }
       end
+      # rubocop:enable Layout/LineLength
 
       it 'returns a 200 OK status code' do
         subject
@@ -87,6 +89,7 @@ RSpec.describe 'pony_breeds', type: :request do
   describe '#pony_by_key' do
     context 'when retrieving a pony by an existing key' do
       subject { get pony_by_key_path, params: { key: 'bali_pony' } }
+      # rubocop:disable Layout/LineLength
       let(:bali_pony) do
         {
           'name' => 'Bali Pony',
@@ -94,6 +97,7 @@ RSpec.describe 'pony_breeds', type: :request do
           'wiki_url' => 'https://en.wikipedia.org/wiki/Bali Pony'
         }
       end
+      # rubocop:enable Layout/LineLength
 
       it 'returns a 200 OK status code' do
         subject
