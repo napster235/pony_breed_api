@@ -1,24 +1,70 @@
-# README
+# PonyBreeds API :horse:
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The **PonyBreed API** provides an interface for the **PonyBreeds** ruby gem.
+At the moment, the API is hosted on **Render** using a free tier, so the first request might be a bit slow.
 
-Things you may want to cover:
+## Getting started
 
-* Ruby version
+In order to use this API locally, you will need to have Ruby and Rails installed on your system.
 
-* System dependencies
+Once you have these prerequisites installed, follow these steps:
 
-* Configuration
+1. Clone this repository to your local machine
+2. Navigate to the project directory and run `bundle install`
+3. Start the API server by running `rails server`
 
-* Database creation
+## Usage
 
-* Database initialization
+Retrieve the pony data by the JSON key<br>
+GET `https://pony-breed-api.onrender.com/api/v1/pony_by_key?key=american_walking_pony`
 
-* How to run the test suite
+```ruby
+{
+  name: 'American Shetland Pony',
+  desiption: 'Short description about the pony',
+  wiki_url: 'https://en.wikipedia.org/wiki/American_Shetland_Pony'
+}
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+Retrieve the pony data by the actual name of the pony<br>
+GET `https://pony-breed-api.onrender.com/api/v1/pony_by_name?name=American Walking Pony`
 
-* Deployment instructions
+```ruby
+{
+  name: 'American Walking Pony',
+  desiption: 'Short description about the pony',
+  wiki_url: 'https://en.wikipedia.org/wiki/American_Walking_Pony"'
+}
+```
 
-* ...
+Retrieve data for a random pony<br>
+ GET `https://pony-breed-api.onrender.com/api/v1/random_pony`
+
+```ruby
+{
+  name: 'Timor pony',
+  desiption: 'Short description about the pony',
+  wiki_url: 'https://en.wikipedia.org/wiki/Timor_Pony'
+}
+```
+
+Note: All responses are in the **JSON** format
+
+## Contributing
+
+Contributions are welcomed to this project!
+If you have an idea for a new feature or find a bug, please open an issue in this repository.
+
+To contribute code to the project, follow these steps:
+
+    1. Fork this repo 
+    2. Create a new branch for your changes
+    3. Make the necessary changes and commit them to your branch
+    4. Push your branch to your forked repository
+    5. Open a pull request from your branch to this repository
+
+I will review your changes and merge them into the project if they are approved.
+
+## License
+
+The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
