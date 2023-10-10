@@ -17,19 +17,19 @@ module Api
 
       def pony_by_name
         @result = Pony::Breeds::ReadPonyData.get_pony_by_name(params[:name])
-        render_result('No data available for the following name:')
+
+        if @result.nil?
+          render json: "No data available for the following name: '#{params[:name]}'"
+        else
+          render json: @result
+        end
       end
 
       def pony_by_key
         @result = Pony::Breeds::ReadPonyData.get_pony_by_key(params[:key])
-        render_result('No data available for the following key:')
-      end
 
-      private
-
-      def render_result(message)
         if @result.nil?
-          render json: "#{message} '#{params[:key] || params[:name]}'"
+          render json: "No data available for the following key: '#{params[:key]}'"
         else
           render json: @result
         end
