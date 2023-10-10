@@ -1,6 +1,6 @@
 # PonyBreeds API :horse:
 
-The **PonyBreed API** provides an interface for the **PonyBreeds** ruby gem.
+The **PonyBreed API** provides an interface for the [**PonyBreeds**](https://github.com/napster235/pony_breeds) ruby gem.
 At the moment, the API is hosted on **Render** using a free tier, so the first request might be a bit slow.
 
 ## Getting started
@@ -21,7 +21,7 @@ GET `https://pony-breed-api.onrender.com/api/v1/pony_by_key?key=american_walking
 ```ruby
 {
   name: 'American Shetland Pony',
-  desiption: 'Short description about the pony',
+  description: 'Short description about the pony',
   wiki_url: 'https://en.wikipedia.org/wiki/American_Shetland_Pony'
 }
 ```
@@ -32,7 +32,7 @@ GET `https://pony-breed-api.onrender.com/api/v1/pony_by_name?name=American Walki
 ```ruby
 {
   name: 'American Walking Pony',
-  desiption: 'Short description about the pony',
+  description: 'Short description about the pony',
   wiki_url: 'https://en.wikipedia.org/wiki/American_Walking_Pony"'
 }
 ```
@@ -43,7 +43,7 @@ Retrieve data for a random pony<br>
 ```ruby
 {
   name: 'Timor pony',
-  desiption: 'Short description about the pony',
+  description: 'Short description about the pony',
   wiki_url: 'https://en.wikipedia.org/wiki/Timor_Pony'
 }
 ```
