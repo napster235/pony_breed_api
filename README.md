@@ -3,6 +3,9 @@
 The **PonyBreed API** provides an interface for the [**PonyBreeds**](https://github.com/napster235/pony_breeds) ruby gem.
 At the moment, the API is hosted on **Render** using a free tier, so the first request might be a bit slow.
 
+In order to access the API you don't need a key, and it free to use.
+You can use this API to learn new things, practice or build a small project
+
 ## Getting started
 
 In order to use this API locally, you will need to have Ruby and Rails installed on your system.
