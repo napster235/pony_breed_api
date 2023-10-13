@@ -1,0 +1,84 @@
+---
+openapi: 3.0.1
+info:
+  title: API V1
+  version: v1
+paths:
+  /random_pony:
+    get:
+      summary: Retrieve a random pony breed.
+      tags:
+        - Pony Breeds
+      responses:
+        '200':
+          description: A random pony breed data.
+          content: {
+            application/json: {
+              examples: {
+                example: {
+                  value: {
+                    name: 'American Shetland Pony',
+                    description: 'The American Shetland Pony is an American breed of pony. It derives from the traditional Shetland Pony from the Shetland Isles of Scotland, but as a result of cross-breeding with other horse and pony breeds, is taller and more elegant.',
+                    wiki_url: 'https://en.wikipedia.org/wiki/American_Shetland_Pony'
+                  }
+                }
+              }
+            }
+          }
+
+  /pony_by_name:
+    get:
+      summary: Retrieve a pony breed data by a pony name.
+      tags:
+        - Pony Breeds
+      parameters:
+        - name: name
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: A pony breed data retrieve by its name.
+          content: {
+            application/json: {
+              examples: {
+                example: {
+                  value: {
+                    name: 'Anadolu Pony',
+                    description: 'The Anadolu Pony is descended from crosses of Turkoman, Arabian, Persian, Karabakh, Akhal-Teke, Karbada, Deliboz, Mongolian and the ancient Anatolia horse. Some books refer to this small pony as the Native Turkish Pony, or Turk, but Professors Salahattin Batu and M. Nurettin Aral made a distinction in types between the horses in Anatolia as Anadolu and East and Southeast Anadolu.',
+                    wiki_url: 'https://en.wikipedia.org/wiki/Anadolu_Pony'
+                  }
+                }
+              }
+            }
+          }
+  /pony_by_key:
+    get:
+      summary: Retrieve a pony breed data by a specific JSON key.
+      tags:
+        - Pony Breeds
+      parameters:
+        - name: key
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: A pony breed data retrieve by a JSON key.
+          content: {
+            application/json: {
+              examples: {
+                example: {
+                  value: {
+                    name: 'Bhirum Pony',
+                    description: 'The Bhirum Pony or Nigerian Pony is a Nigerian breed of pony or small horse. It developed in Nigeria’s northern regions.',
+                    wiki_url: 'https://en.wikipedia.org/wiki/Bhirum_Pony'
+                  }
+                }
+              }
+            }
+          }
+servers:
+- url: https://pony-breed-api.onrender.com/api/v1
