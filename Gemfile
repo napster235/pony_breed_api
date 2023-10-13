@@ -15,4 +15,5 @@ gem 'bootsnap', require: false
 gem 'pony_breeds', '~> 0.1.4'
 gem 'rspec', '~> 3.0'
 gem 'rspec-rails', '~> 6.0'
+gem 'rswag', '~> 2.11.0'
 gem 'rubocop', '~> 1.21'
