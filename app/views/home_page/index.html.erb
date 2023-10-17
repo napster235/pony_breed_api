@@ -49,21 +49,35 @@
             background-color: white;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
+
+        .image-container {
+            display: flex;
+            justify-content: center;
+            margin: auto;
+            width: 500px;
+            height: 300px;
+        }
     </style>
   </head>
 
   <body>
-  <header>
-    <h1>PonyBreeds API</h1>
-  </header>
-  <div class="button-container">
-    <%= link_to 'API docs', rswag_ui_path %>
-    <a target="_blank" href="https://github.com/napster235/pony_breed_api">GitHub</a>
-  </div>
-  <section class="content">
-    <h2>Overview</h2>
-    <p>The PonyBreed API provides an interface for the PonyBreeds ruby gem. At the moment, the API is hosted on Render using a free tier, so the first request might be a bit slow.
-      In order to access the API you don't need a key, and it free to use. You can use this API to learn new things, practice or build a small project.</p>
-  </section>
+    <header>
+      <h1>PonyBreeds API</h1>
+    </header>
+
+    <div class="button-container">
+      <%= link_to 'API docs', rswag_ui_path %>
+      <a target="_blank" href="https://github.com/napster235/pony_breed_api">GitHub</a>
+    </div>
+
+    <section class="content">
+      <h2>Overview</h2>
+      <p>The PonyBreed API provides an interface for the PonyBreeds ruby gem. At the moment, the API is hosted on Render using a free tier, so the first request might be a bit slow.
+        In order to access the API you don't need a key, and it free to use. You can use this API to learn new things, practice or build a small project.</p>
+    </section>
+
+    <div class="image-container">
+      <img src="https://images.saymedia-content.com/.image/t_share/MTc0NDAxODQxOTkwMjE1MDE2/pony-care-and-grooming.jpg" alt="A picture of a pony" />
+    </div>
   </body>
 </html>
