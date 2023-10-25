@@ -229,7 +229,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootsnap
-  pony_breeds (~> 0.1.4)
+  pony_breeds (~> 0.1.6)
   puma (~> 5.0)
   rails (~> 7.0.8)
   redis (~> 5.0)
