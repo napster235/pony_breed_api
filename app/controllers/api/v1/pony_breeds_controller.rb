@@ -17,7 +17,7 @@ module Api
       end
 
       def pony_by_name
-        @result = Pony::Breeds::RedisCaching.instance.cache_data("random_pony_#{params[:name]}") do
+        @result = Pony::Breeds::RedisCaching.instance.cache_data("pony_by_name-#{params[:name]}") do
           Pony::Breeds::ReadPonyData.get_pony_by_name(params[:name])
         end
 
