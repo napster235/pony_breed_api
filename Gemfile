@@ -13,6 +13,7 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 gem 'bootsnap', require: false
 gem 'pony_breeds', '~> 0.1.6'
+gem 'redis', '~> 5.0'
 gem 'rspec', '~> 3.0'
 gem 'rspec-rails', '~> 6.0'
 gem 'rswag', '~> 2.11.0'
