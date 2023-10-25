@@ -118,7 +118,7 @@ GEM
     parser (3.2.2.4)
       ast (~> 2.4.1)
       racc
-    pony_breeds (0.1.5)
+    pony_breeds (0.1.6)
       rails (>= 5.2)
     public_suffix (5.0.3)
     puma (5.6.7)
