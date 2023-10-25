@@ -29,7 +29,9 @@ module Api
       end
 
       def pony_by_key
-        @result = Pony::Breeds::ReadPonyData.get_pony_by_key(params[:key])
+        @result = Pony::Breeds::RedisCaching.instance.cache_data("pony_by_key-#{params[:key]}") do
+          Pony::Breeds::ReadPonyData.get_pony_by_key(params[:key])
+        end
 
         if @result.nil?
           render json: "No data available for the following key: '#{params[:key]}'"
