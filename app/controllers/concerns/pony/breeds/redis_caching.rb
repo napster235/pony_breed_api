@@ -9,7 +9,7 @@ module Pony
 
       def initialize
         # @redis = Redis.new(host: redis_config[:host], port: redis_config[:port])
-        @redis = Redis.new(url: REDIS_URL)
+        @redis = Redis.new(url: redis_config[:url])
         @redis.ping
       rescue StandardError => e
         Rails.logger.error "Encountered an error while initializing Redis: '#{e.message}'."
