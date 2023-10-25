@@ -8,19 +8,27 @@ module Pony
       include Singleton
 
       def initialize
-        @redis = Redis.new(host: redis_config[:host], port: redis_config[:port])
+        # @redis = Redis.new(host: redis_config[:host], port: redis_config[:port])
+        @redis = Redis.new(url: REDIS_URL)
+        @redis.ping
+      rescue StandardError => e
+        Rails.logger.error "Encountered an error while initializing Redis: '#{e.message}'."
       end
 
       def cache_data(key)
+        return yield unless redis_connected?
+
         response = @redis.get(key)
 
         if response.nil?
-          @redis.setex(key, 604_800, yield.to_json)
-        else
-          @redis.setex(key, 604_800, response)
-        end
+          unless yield.nil?
+            @redis.setex(key, 604_800, yield.to_json)
 
-        return yield if response.nil?
+            return yield.to_json
+          end
+
+          return yield
+        end
 
         response
       end
@@ -29,6 +37,10 @@ module Pony
 
       def redis_config
         Rails.configuration.redis
+      end
+
+      def redis_connected?
+        true if @redis.connected?
       end
     end
   end
