@@ -3,8 +3,13 @@
 The **PonyBreed API** provides an interface for the [**PonyBreeds**](https://github.com/napster235/pony_breeds) ruby gem.
 At the moment, the API is hosted on **Render** using a free tier, so the first request might be a bit slow.
 
+With **Redis** caching in place, the system intelligently stores frequently accessed data.
+This not only accelerates data retrieval but also reduces the need for repetitive queries.
+
 In order to access the API you don't need a key, and it free to use.
-You can use this API to learn new things, practice or build a small project
+You can use this API to learn new things, practice or build a small project.
+Users can make HTTP requests to the Pony API endpoints to fetch desired data.
+Responses are in JSON format, ensuring compatibility with a broad range of applications and platforms.
 
 ## Getting started
 
@@ -18,8 +23,11 @@ Once you have these prerequisites installed, follow these steps:
 
 ## Usage
 
-Retrieve the pony data by the JSON key<br>
-GET `https://pony-breed-api.onrender.com/api/v1/pony_by_key?key=american_walking_pony`
+In order to test the Redis caching locally, you will need to have Redis installed.
+If Redis is not installed, the values will be retrieved from the pony_breeds gem.
+
+**Retrieve the pony data by the JSON key<br>**
+**GET** `https://pony-breed-api.onrender.com/api/v1/pony_by_key?key=american_walking_pony`
 
 ```ruby
 {
@@ -29,8 +37,8 @@ GET `https://pony-breed-api.onrender.com/api/v1/pony_by_key?key=american_walking
 }
 ```
 
-Retrieve the pony data by the actual name of the pony<br>
-GET `https://pony-breed-api.onrender.com/api/v1/pony_by_name?name=American Walking Pony`
+**Retrieve the pony data by the actual name of the pony<br>**
+**GET** `https://pony-breed-api.onrender.com/api/v1/pony_by_name?name=American Walking Pony`
 
 ```ruby
 {
@@ -40,8 +48,8 @@ GET `https://pony-breed-api.onrender.com/api/v1/pony_by_name?name=American Walki
 }
 ```
 
-Retrieve data for a random pony<br>
- GET `https://pony-breed-api.onrender.com/api/v1/random_pony`
+**Retrieve data for a random pony<br>**
+**GET** `https://pony-breed-api.onrender.com/api/v1/random_pony`
 
 ```ruby
 {
