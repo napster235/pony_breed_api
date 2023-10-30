@@ -4,9 +4,12 @@ require 'singleton'
 
 module Pony
   module Breeds
+    # The RedisCaching class has the ability to create, store and retrieve cached items
+    # from a Redis server
     class RedisCaching
       include Singleton
 
+      # Initializes a new RedisCaching object
       def initialize
         @redis = Redis.new(url: redis_config[:url])
         @redis.ping
@@ -14,6 +17,12 @@ module Pony
         Rails.logger.error "Encountered an error while initializing Redis: '#{e.message}'."
       end
 
+      # Retrieve a cached value from Redis. If there is no cached value, a call will be performed
+      # and the value will be stored inside a Redis cache key.
+      #
+      # @param key [String] the cache key stored in Redis
+      #
+      # return [Object] the cached value
       def cache_data(key)
         return yield unless redis_connected?
 
