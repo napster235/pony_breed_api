@@ -57,6 +57,10 @@
             width: 500px;
             height: 300px;
         }
+
+        .content a:visited {
+            color: #50b3a2;
+        }
     </style>
   </head>
 
@@ -72,8 +76,21 @@
 
     <section class="content">
       <h2>Overview</h2>
-      <p>The PonyBreed API provides an interface for the PonyBreeds ruby gem. At the moment, the API is hosted on Render using a free tier, so the first request might be a bit slow.
-        In order to access the API you don't need a key, and it free to use. You can use this API to learn new things, practice or build a small project.</p>
+      <p>The <b>PonyBreed API</b> provides an interface for the <%= link_to 'PonyBreeds', 'https://github.com/napster235/pony_breeds', target: '_blank' %> ruby gem.
+        At the moment, the API is hosted on <%= link_to 'render.com', 'https://render.com', target: '_blank' %> using a free tier, so the first request might be a bit slow.
+      </p>
+
+      <p>
+        With <b>Redis</b> caching in place, the system intelligently stores frequently accessed data.
+        This not only accelerates data retrieval but also reduces the need for repetitive queries.
+      </p>
+
+      <p>
+        In order to access the API you don't need a key, and it free to use.
+        You can use this API to learn new things, practice or build a small project.
+        Users can make HTTP requests to the Pony API endpoints to fetch desired data.
+        Responses are in JSON format, ensuring compatibility with a broad range of applications and platforms.
+      </p>
     </section>
 
     <div class="image-container">
